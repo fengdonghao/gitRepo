@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+    <h3 >二维码转化完成</h3>
+    <img th:src="@{${username}+'.jpg'}" alt="二维码" />
+    <br/>
+    <a href="/util/preTwoDimension">返回</a>
+    <a download="newPic" th:href="@{${username}+'.jpg'}" >下载</a>
+</div>
+</body>
+</html>

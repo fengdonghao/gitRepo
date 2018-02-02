@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../static/js/jquery-3.2.1.min.js"></script>
+<script src="../jquery/layer.js" type="text/javascript" ></script>
+<script type="text/javascript">
+    $(function() {
+        $('.btn').click(function() {
+            layer.msg('加载中（点击关闭）', {
+                anim: 4, //动画效果
+                icon: 16,
+                shade: 0.5, //遮罩层透明度
+                shadeClose: true, //点击遮罩层关闭
+                time: 0, //不自动关闭
+            }, function() {
+                layer.alert('显示加载信息后，你可以执行别的操作，就像这样', {
+                    skin: 'layui-layer-lan',
+                    closeBtn: 0,
+                    anim:6 //动画类型
+                });
+            });
+        })
+    })
+</script>
+<style type="text/css">
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .demo {}
+</style>
+<body>
+<div class="demo">
+    <button class="btn">点击显示效果</button>
+</div>
+</body>
+</html>

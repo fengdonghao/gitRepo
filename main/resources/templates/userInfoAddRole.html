@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<style>
+    table{
+        color:black;
+    }
+</style>
+<body>
+<table border="1px" style="border-collapse: collapse">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>permission</th>
+    </tr>
+    <tr th:each="list:${sysPermissionList}">
+        <td th:text="${list.id}"></td>
+        <td th:text="${list.name}"></td>
+        <td th:text="${list.permission}"></td>
+    </tr>
+
+</table>
+
+<table border="1px" style="border-collapse: collapse">
+    <tr>
+        <th>ID</th>
+        <th>role</th>
+
+    </tr>
+    <tr th:each="list:${roleList}">
+        <td th:text="${list.roleId}"></td>
+        <td th:text="${list.role}"></td>
+    </tr>
+
+</table>
+
+
+<table border="1px" style="border-collapse: collapse">
+    <tr>
+        <th>ID</th>
+        <th>role</th>
+
+    </tr>
+    <tr th:each="test:${getPermission}">
+        <td th:text="${getRole}"></td>
+        <td th:text="${test}"></td>
+    </tr>
+
+</table>
+</body>
+</html>

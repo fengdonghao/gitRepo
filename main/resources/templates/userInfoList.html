@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+
+
+</head>
+<style>
+    table{
+        border-collapse: collapse;
+        color: black;
+    }
+    #divA{
+        position: absolute;
+        width: 800px;
+        height:400px;
+        top:50%;
+        left: 50%;
+        margin-top: -200px;
+        margin-left: -400px;
+        border: 1px solid black;
+    }
+    #divB{
+        position: absolute;
+        border:1px solid blueviolet;
+        width:400px;
+        left: 50%;
+        margin-left: -200px;
+        margin-bottom: 20px;
+        text-align: center;
+
+    }
+    #divB input{
+
+    }
+
+</style>
+
+
+<body >
+
+<div id="divA">
+<center>
+<h3>用户信息管理</h3>
+<table border="1px">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>账号</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>salt</th>
+        <th>state</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="user:${userInfoList}">
+        <td th:text="${user.uid}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.salt}"></td>
+        <td th:text="${user.state}"></td>
+        <td>
+            <a  th:href="@{/userInfo/userDelId(id=${user.uid})}" >删除</a>
+            <a  th:href="@{/userInfo/userEdit(id=${user.uid})}" >修改</a>
+        </td>
+    </tr>
+    </thead>
+</table>
+
+
+
+</center>
+    <div id="divB">
+        总页数：<input type="text" th:value="${totalPages}" style="height: 12px;width: 15px" readonly="true" id="totalPages"/>
+        总条目：<input type="text" th:value="${totalElements}" style="height: 12px;width: 15px" readonly="true"/>
+        当前页数：<input type="text" th:value="${currentPages}+1" style="height: 12px;width: 15px" readonly="true" id="currentPage"/>
+        <a  th:href="@{/userInfo/pageSkip(pageId=${currentPages}-1)}"  id="prePage1"  onclick="prePage()">上一页</a>
+        <a   th:href="@{/userInfo/pageSkip(pageId=${currentPages}+1)}" id="nextPage1" onclick="nextPage()">下一页</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function nextPage() {
+        var page1=currentPage.value;
+        var page3=totalPages.value;
+        var a=page1>=page3;
+        if (a){
+            nextPage1.removeAttribute("href");
+            alert("已到最后一页！");
+            return false;
+        }else {
+
+        }
+
+    }
+
+    function prePage() {
+        var page2=currentPage.value;
+        var a;
+        a=Number(page2)>1;
+        if (a){
+        }else{
+            prePage1.removeAttribute("href");
+            alert("已到第一页");
+            return false;
+        }
+    };
+
+
+</script>
+
+</body>
+</html>

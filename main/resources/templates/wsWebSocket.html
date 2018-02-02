@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <script th:src="@{js/jquery-3.1.1.js}"></script>
+</head>
+<body>
+
+<div>
+    <input type="button" id="connect" value="连接" onclick="connect1()"/>
+    <input type="button" id="disconnect" value="断开连接" onclick="disconnect()" />
+    <input type="button" id="send" value="发送" onclick="send()"/>
+</div>
+<div>
+    <p id="message"></p>
+
+</div>
+
+<script type="text/javascript">
+    var socket;
+    if (typeof (WebSocket)=="undefined"){
+        alert("浏览器不支持WebSocket!");
+
+    }
+    function connect1(){
+        socket=new WebSocket("ws://192.168.1.114:8080/fengdonghao/ws");
+        socket.onopen=function () {
+            alert("Socket已经打开！");
+
+        };
+        socket.onmessage=function (msg) {
+            alert(msg.data);
+
+        };
+        socket.onclose=function () {
+            alert("Socket已经关闭！")
+
+        };
+        socket.onerror=function () {
+            alert("error！");
+
+        };
+    };
+    function send() {
+        socket.send("这是来自客户端的消息"+location.href+new Date());
+
+    };
+    function disconnect() {
+        socket.close();
+
+    };
+
+
+
+</script>
+
+</body>
+</html>

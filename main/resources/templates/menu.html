@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<style>
+    .tupian{
+        width: 800px;
+        height: 500px;
+        margin:0px auto;
+        border: 1px solid fuchsia;
+        position: relative;
+        left: 0px;
+        top: 0px;
+
+    }
+    .tupian .ctrl{
+        width: 120px;
+        height: 25px;
+        position: absolute;
+        right: 50px;
+        bottom: 10px;
+
+
+    }
+    .tupian .ctrl input{
+        cursor: pointer;
+        background-color: gray;
+        border-radius: 50%;
+    }
+</style>
+<body  >
+<div class="tupian">
+
+    <img id="tu" src="/11.jpg" height="500px" width="800px"/>
+    <div class="ctrl">
+
+        <input  type="button" value="1" onclick="tu.src='/11.jpg'"/>
+        <input  type="button" value="2" onclick="tu.src='/8888888.jpg'"/>
+        <input  type="button" value="3" onclick="tu.src='/222222.jpg'"/>
+        <input  type="button" value="4" onclick="tu.src='/bg.jpg'"/>
+    </div>
+</div>
+
+</body>
+</html>

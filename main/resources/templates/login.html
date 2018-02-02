@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<style>
+
+    body{
+        background-color: #006699;
+        /*background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;*/
+
+
+    }
+    div{
+        width: 400px;
+        position: absolute;
+        margin-left: -200px;
+        margin-top: -80px;
+        top: 50%;
+        left: 50%;
+        display: block;
+        z-index: 2000;
+        border: 1px solid #006699;
+
+    }
+    #p1{
+        font-size: 90px;
+        font-weight: bold;
+        color: lavender;
+        font-family:"SimHei";
+    }
+    #p2{
+        font-size: 20px;
+        font-weight: bold;
+        color: lavender;
+        font-style: inherit;
+        font-family:"SimHei";
+    }
+
+</style>
+<body >
+
+<center>
+<p id="p1">后台管理系统</p>
+</center>
+<div >
+    <center>
+    <h4 th:text="${msg}"></h4>
+
+    <form id="p2" action="/login" method="POST">
+        <p >账号：<input type="text" name="username" value="admin"/></p>
+        <p >密码：<input type="password" name="password" value="111111"/></p>
+        <p><input type="submit" value="登录"/><input name="rememberMe" type="checkbox"/>记住我</p>
+
+    </form>
+    </center>
+</div>
+
+</body>
+</html>
+
+

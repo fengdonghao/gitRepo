@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:display="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .adc{
+            width: 200px;
+            height: 30px;
+            background-color: saddlebrown;
+            font-size: 14px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .list{
+            width: 200px;
+            height: 200px;
+            background-color: #006699;
+            display: none;
+        }
+        .main{
+            width: 300px;
+            height: 500px;
+            background-color: aqua;
+            margin: 0px auto;
+        }
+        .meng{
+            width: 100%;
+            height: 2000px;
+            position: fixed;
+            left:0px;
+            top: 0px;
+            background-color: #000;
+            opacity: 0.5;
+            display: none;
+        }
+        .jinggao{
+            width: 200px;
+            height: 100px;
+            background-color: saddlebrown;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+
+            display: none;
+        }
+    </style>
+
+
+</head>
+<body>
+<div id="wo" onclick="wo.style.color='#F00'"> 变红</div>
+<!--
+<p onclick="alert('erre')">fdfdf</p>//行内-->
+
+
+<div id="kuang" class="list" >变白</div>
+<div class="main">
+    <div id="shang" class="adc" onclick="meng.style.display='block';shang.style.color='#FFF';jinggao.style.display='block'">登录</div>
+</div>
+<div id="meng" class="meng" onclick="this.style.display='none';jinggao.style.display='none'"></div>
+<div  id="jinggao" class="jinggao">jiangao </div>
+<marquee>sfdsfdss</marquee>
+</body>
+</html>

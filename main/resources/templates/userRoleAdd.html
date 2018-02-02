@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+
+</head>
+<script type="text/javascript">
+    function notNull() {
+        var id=uid.value;
+        if (uid.value){
+            alert(id);
+            noName.type="submit";
+        }else {
+            alert("不能为空！");
+            return false;
+        }
+
+    }
+
+</script>
+<body>
+<form method="post">
+ 输入uid：<input type="text" name="uid" id="uid"  />
+<input id="noName" type="button" value="submit" onclick="notNull()"/>
+</form>
+</body>
+</html>
